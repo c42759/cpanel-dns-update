@@ -1,0 +1,14 @@
+
+services:
+  cpanel_update:
+    image: c42759/cpanel-ip-update:latest
+    container_name: cpanel_update
+    restart: unless-stopped
+    environment:
+      CPANEL_ADDRESS: ${CPANEL_ADDRESS}
+      CPANEL_USERNAME: ${CPANEL_USERNAME}
+      CPANEL_PASSWORD: ${CPANEL_PASSWORD}
+      DOMAIN: ${DOMAIN}
+      RECORD: ${RECORD}
+      TTL: ${TTL}
+      EVERY: ${EVERY}
